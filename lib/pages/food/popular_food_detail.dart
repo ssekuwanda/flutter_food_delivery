@@ -79,7 +79,7 @@ class PopularFoodDetail extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Container(
-        height: 120,
+        height: Dimensions.bottomHeightBar,
         padding: EdgeInsets.only(
           top: Dimensions.height30,
           bottom: Dimensions.height30,
@@ -94,6 +94,7 @@ class PopularFoodDetail extends StatelessWidget {
           ),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               decoration: BoxDecoration(
@@ -123,6 +124,14 @@ class PopularFoodDetail extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(Dimensions.height20),
+              child: BigText(text: "\$10 ! Add to Cart", color: Colors.white),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: AppColors.mainColor,
               ),
             ),
           ],
