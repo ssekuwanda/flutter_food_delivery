@@ -4,6 +4,7 @@ import 'package:flutter_food_delivery_app/utils/dimensions.dart';
 import 'package:flutter_food_delivery_app/widgets/app_column.dart';
 import 'package:flutter_food_delivery_app/widgets/app_icon.dart';
 import 'package:flutter_food_delivery_app/widgets/big_text.dart';
+import 'package:flutter_food_delivery_app/widgets/expandable_text_widget.dart';
 import 'package:flutter_food_delivery_app/widgets/icon_and_text.dart';
 import 'package:flutter_food_delivery_app/widgets/small_text.dart';
 
@@ -70,7 +71,15 @@ class PopularFoodDetail extends StatelessWidget {
                   children: [
                     AppColumn(text: "Chinese Side"),
                     SizedBox(height: Dimensions.height20),
-                    BigText(text: "Introduce")
+                    BigText(text: "Introduce"),
+                    SizedBox(height: Dimensions.height20),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: ExpandableTextWidget(
+                            text:
+                                "This is chicken meant  for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the darkThis is chicken meant for eating in the darkThis is chicken meant for eating in the dark for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the darkThis is chicken meant for eating in the darkThis is chicken meant for eating in the dark for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the darkThis is chicken meant for eating in the darkThis is chicken meant for eating in the dark for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the darkThis is chicken meant for eating in the darkThis is chicken meant for eating in the dark for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the darkThis is chicken meant for eating in the darkThis is chicken meant for eating in the darkfor eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the dark This is chicken meant for eating in the darkThis is chicken meant for eating in the darkThis is chicken meant for eating in the dark"),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -128,7 +137,7 @@ class PopularFoodDetail extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.all(Dimensions.height20),
-              child: BigText(text: "\$10 ! Add to Cart", color: Colors.white),
+              child: BigText(text: "\$10 | Add to Cart", color: Colors.white),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: AppColors.mainColor,
