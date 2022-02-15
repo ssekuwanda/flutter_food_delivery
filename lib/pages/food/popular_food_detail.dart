@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_delivery_app/api/controllers.dart';
 import 'package:flutter_food_delivery_app/utils/colors.dart';
 import 'package:flutter_food_delivery_app/utils/dimensions.dart';
 import 'package:flutter_food_delivery_app/widgets/app_column.dart';
@@ -7,9 +8,10 @@ import 'package:flutter_food_delivery_app/widgets/big_text.dart';
 import 'package:flutter_food_delivery_app/widgets/expandable_text_widget.dart';
 import 'package:flutter_food_delivery_app/widgets/icon_and_text.dart';
 import 'package:flutter_food_delivery_app/widgets/small_text.dart';
+import 'package:get/get.dart';
 
 class PopularFoodDetail extends StatelessWidget {
-  const PopularFoodDetail({Key? key}) : super(key: key);
+  PopularFoodDetail({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

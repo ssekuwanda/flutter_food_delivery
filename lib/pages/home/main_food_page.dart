@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_delivery_app/api/controllers.dart';
 import 'package:flutter_food_delivery_app/pages/home/food_page_body.dart';
 import 'package:flutter_food_delivery_app/utils/colors.dart';
 import 'package:flutter_food_delivery_app/utils/dimensions.dart';
 import 'package:flutter_food_delivery_app/widgets/big_text.dart';
 import 'package:flutter_food_delivery_app/widgets/small_text.dart';
+import 'package:get/get.dart';
 
 class MainFoodPage extends StatefulWidget {
-  const MainFoodPage({Key? key}) : super(key: key);
+  final ProductController productController = Get.put(ProductController());
+  MainFoodPage({Key? key}) : super(key: key);
 
   @override
   _MainFoodPageState createState() => _MainFoodPageState();
