@@ -4,18 +4,22 @@ import 'package:get/get.dart';
 
 class ProductController extends GetxController {
   var productList = <Product>[].obs;
+  ProductController() {
+    fetchProducts();
+  }
 
   @override
   void onInit() {
     fetchProducts();
+    print("yes");
     super.onInit();
   }
 
   void fetchProducts() async {
     var products = await RemoteServices.fetchProducts();
     if (products != null) {
-      productList.value = products as List<Product>;
-      print(productList);
+      productList.value = products;
+      print(products);
     }
   }
 }

@@ -41,19 +41,19 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => Column(
-        children: [
-          Container(
-            height: Dimensions.pageView,
-            child: PageView.builder(
-                controller: pageController,
-                itemCount: 5,
-                itemBuilder: (context, position) {
-                  return _buildPageItem(position);
-                }),
-          ),
-          DotsIndicator(
+    return Column(
+      children: [
+        Container(
+          height: Dimensions.pageView,
+          child: PageView.builder(
+              controller: pageController,
+              itemCount: 5,
+              itemBuilder: (context, position) {
+                return _buildPageItem(position);
+              }),
+        ),
+        Obx(
+          () => DotsIndicator(
             dotsCount: productController.productList.length,
             position: _currPageValue,
             decorator: DotsDecorator(
@@ -64,108 +64,108 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   borderRadius: BorderRadius.circular(5.0)),
             ),
           ),
-          SizedBox(height: Dimensions.height20),
-          Container(
-            margin: EdgeInsets.only(left: Dimensions.width30),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                BigText(text: "Popular"),
-                SizedBox(width: Dimensions.width10),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 3),
-                  child: BigText(text: ".", color: Colors.black26),
-                ),
-                SizedBox(width: Dimensions.width10),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 3),
-                  child: SmallText(text: "Food Pairing"),
-                ),
-              ],
-            ),
+        ),
+        SizedBox(height: Dimensions.height20),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width30),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: "Popular"),
+              SizedBox(width: Dimensions.width10),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(text: ".", color: Colors.black26),
+              ),
+              SizedBox(width: Dimensions.width10),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: SmallText(text: "Food Pairing"),
+              ),
+            ],
           ),
-          SizedBox(height: Dimensions.height20),
-          ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(
-                    left: Dimensions.width10,
-                    right: Dimensions.width10,
-                    bottom: Dimensions.height15,
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: Dimensions.listViewImg,
-                        height: Dimensions.listViewImg,
+        ),
+        SizedBox(height: Dimensions.height20),
+        ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                  left: Dimensions.width10,
+                  right: Dimensions.width10,
+                  bottom: Dimensions.height15,
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      width: Dimensions.listViewImg,
+                      height: Dimensions.listViewImg,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20),
+                        color: Colors.white38,
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/image1.jpg"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: Dimensions.listViewTextContSize,
                         decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(Dimensions.radius20),
-                          color: Colors.white38,
-                          image: DecorationImage(
-                            image: AssetImage("assets/images/image1.jpg"),
-                            fit: BoxFit.cover,
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(Dimensions.radius20),
+                            bottomRight: Radius.circular(Dimensions.radius20),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            left: Dimensions.width10,
+                            right: Dimensions.width10,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              BigText(
+                                text: "Nutritius fruit meal in China today",
+                              ),
+                              SmallText(text: "With Chinese Characteristics"),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  IconAndTextWidget(
+                                    icon: Icons.circle,
+                                    text: "Normal",
+                                    iconColor: AppColors.iconColor1,
+                                  ),
+                                  IconAndTextWidget(
+                                    icon: Icons.location_on,
+                                    text: "1.7km",
+                                    iconColor: AppColors.mainColor,
+                                  ),
+                                  IconAndTextWidget(
+                                    icon: Icons.access_time_rounded,
+                                    text: "32min",
+                                    iconColor: AppColors.iconColor2,
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                      Expanded(
-                        child: Container(
-                          height: Dimensions.listViewTextContSize,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(Dimensions.radius20),
-                              bottomRight: Radius.circular(Dimensions.radius20),
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                              left: Dimensions.width10,
-                              right: Dimensions.width10,
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                BigText(
-                                  text: "Nutritius fruit meal in China today",
-                                ),
-                                SmallText(text: "With Chinese Characteristics"),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    IconAndTextWidget(
-                                      icon: Icons.circle,
-                                      text: "Normal",
-                                      iconColor: AppColors.iconColor1,
-                                    ),
-                                    IconAndTextWidget(
-                                      icon: Icons.location_on,
-                                      text: "1.7km",
-                                      iconColor: AppColors.mainColor,
-                                    ),
-                                    IconAndTextWidget(
-                                      icon: Icons.access_time_rounded,
-                                      text: "32min",
-                                      iconColor: AppColors.iconColor2,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              }),
-        ],
-      ),
+                    ),
+                  ],
+                ),
+              );
+            }),
+      ],
     );
   }
 
